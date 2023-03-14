@@ -188,7 +188,7 @@ def main_worker(gpu, args):
         )
     else:
         dice_loss = DiceCELoss(to_onehot_y=True, softmax=True)
-    post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)
+    post_label = AsDiscrete(to_onehot=args.out_channels, n_classes=args.out_channels)
     post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
     dice_acc = DiceMetric(include_background=True, reduction=MetricReduction.MEAN, get_not_nans=True)
     model_inferer = partial(
