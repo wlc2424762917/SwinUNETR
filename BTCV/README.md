@@ -107,7 +107,7 @@ python main.py
 --lrschedule=warmup_cosine
 --infer_overlap=0.5
 --save_checkpoint
---data_dir=/dataset/dataset0/
+--data_dir=/media/NAS02/Synapse_multi_organ/MONAI_data/
 ```
 
 ## Training from self-supervised weights on single GPU (base model with gradient check-pointing)
